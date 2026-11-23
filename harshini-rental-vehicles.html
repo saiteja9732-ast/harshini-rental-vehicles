@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshini Rental Vehicles | Cars & Tempo Travellers</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #f59e0b;
+      --whatsapp: #25d366;
+      --dark: #111827;
+      --light: #f3f4f6;
+      --white: #ffffff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+    }
+    header a.call-btn {
+      background: var(--secondary);
+      color: var(--dark);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .hero {
+      background: linear-gradient(rgba(17, 24, 39, 0.75), rgba(30, 58, 138, 0.85)),
+                  url('https://unsplash.com') center/cover;
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 5%;
+    }
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+    .hero .cta-btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--dark);
+      padding: 0.8rem 1.8rem;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    section {
+      padding: 3rem 5%;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+    h3.section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    p.section-subtitle {
+      text-align: center;
+      color: #4b5563;
+      margin-bottom: 2rem;
+    }
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem;
+      text-align: center;
+    }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+    .card-body {
+      padding: 1.2rem;
+    }
+    .rate-tag {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    .rate-tag small {
+      font-size: 0.85rem;
+      color: #6b7280;
+      font-weight: normal;
+    }
+    .card-body ul {
+      list-style: none;
+      margin-bottom: 1.2rem;
+      font-size: 0.92rem;
+      color: #374151;
+    }
+    .card-body ul li {
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .select-btn {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .select-btn:hover {
+      background: #172554;
+    }
+    .booking-container {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .form-group input, .form-group select {
+      padding: 0.7rem;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    .submit-btn {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--whatsapp);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #1ebe5d;
+    }
+    footer {
+      background: var(--dark);
+      color: #9ca3af;
+      text-align: center;
+      padding: 1.5rem 5%;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Harshini Rental Vehicles</h1>
+    <a href="tel:+919966033226" class="call-btn">Call Now</a>
+  </header>
+
+  <div class="hero">
+    <h2>Reliable Cars & Tempo Travellers on Rent</h2>
+    <p>Well-maintained AC & Non-AC vehicles with experienced drivers for local trips, airport transfers, family functions, and outstation tours in Hyderabad & across India.</p>
+    <a href="#booking" class="cta-btn">Book Your Vehicle</a>
+  </div>
+
+  <section id="fleet">
+    <h3 class="section-title">Our Fleet & Per-KM Pricing</h3>
+    <p class="section-subtitle">Per-km charges vary based on vehicle choice and trip type (Local / Outstation).</p>
+
+    <div class="fleet-grid">
+      <!-- Dzire -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Swift Dzire</h4>
+          <span>4+1 Seater Sedan</span>
+        </div>
+        <div class="card-body">
+          <div class="rate-tag">₹13 / km <small>(Starts from)</small></div>
+          <ul>
+            <li>Comfortable AC Sedan</li>
+            <li>Ideal for small families & airport drops</li>
+            <li>Ample boot space for luggage</li>
+            <li>Driver allowance extra for outstation</li>
+          </ul>
+          <button class="select-btn" onclick="selectVehicle('Swift Dzire (4+1 Seater)')">Book Dzire</button>
+        </div>
+      </div>
+
+      <!-- Etios -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Toyota Etios</h4>
+          <span>4+1 Seater Sedan</span>
+        </div>
+        <div class="card-body">
+          <div class="rate-tag">₹13 / km <small>(Starts from)</small></div>
+          <ul>
+            <li>Spacious legroom & large boot</li>
+            <li>Smooth highway & outstation comfort</li>
+            <li>Full AC with clean interiors</li>
+            <li>Driver allowance extra for outstation</li>
+          </ul>
+          <button class="select-btn" onclick="selectVehicle('Toyota Etios (4+1 Seater)')">Book Etios</button>
+        </div>
+      </div>
+
+      <!-- Innova -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Toyota Innova</h4>
+          <span>6+1 / 7+1 Seater SUV</span>
+        </div>
+        <div class="card-body">
+          <div class="rate-tag">₹18 / km <small>(Starts from)</small></div>
+          <ul>
+            <li>Premium SUV comfort for long tours</li>
+            <li>Dual AC vents for all rows</li>
+            <li>Roof carrier available on request</li>
+            <li>Driver allowance extra for outstation</li>
+          </ul>
+          <button class="select-btn" onclick="selectVehicle('Toyota Innova (7+1 Seater)')">Book Innova</button>
+        </div>
+      </div>
+
+      <!-- Tempo -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Tempo Traveller</h4>
+          <span>12 / 17 / 20 Seater</span>
+        </div>
+        <div class="card-body">
+          <div class="rate-tag">₹24 / km <small>(Starts from)</small></div>
+          <ul>
+            <li>Push-back seats & individual AC vents</li>
+            <li>Best for group tours, weddings & pilgrimages</li>
+            <li>Dedicated luggage compartment</li>
+            <li>Driver allowance extra for outstation</li>
+          </ul>
+          <button class="select-btn" onclick="selectVehicle('Tempo Traveller')">Book Tempo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h3 class="section-title">Instant Booking Inquiry</h3>
+    <p class="section-subtitle">Fill in your trip details below to get a fast quote on WhatsApp.</p>
+
+    <div class="booking-container">
+      <form id="bookingForm" onsubmit="sendWhatsApp(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="custName">Your Name *</label>
+            <input type="text" id="custName" required placeholder="Enter full name" />
+          </div>
+          <div class="form-group">
+            <label for="custPhone">Mobile Number *</label>
+            <input type="tel" id="custPhone" required placeholder="10-digit mobile number" />
+          </div>
+          <div class="form-group">
+            <label for="vehicleSelect">Select Vehicle *</label>
+            <select id="vehicleSelect" required>
+              <option value="Swift Dzire (4+1 Seater)">Swift Dzire (4+1 Seater)</option>
+              <option value="Toyota Etios (4+1 Seater)">Toyota Etios (4+1 Seater)</option>
+              <option value="Toyota Innova (7+1 Seater)">Toyota Innova (7+1 Seater)</option>
+              <option value="Tempo Traveller">Tempo Traveller (12/17/20 Seater)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tripType">Trip Type *</label>
+            <select id="tripType" required>
+              <option value="Local Package">Local Package</option>
+              <option value="Outstation Round Trip">Outstation Round Trip</option>
+
+
+
+              
